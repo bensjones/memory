@@ -1,0 +1,25 @@
+<template name="playersList">
+
+    <span class="icon-users"></span>
+
+    <p class="text--small-caps">Players</p>
+
+    <ul class="players-list">
+        {{#each this}}
+            {{> playersListItem}}
+        {{/each}}
+    </ul>
+
+</template>
+
+<template name="playersListItem">
+
+    <li class="players-list-item">
+        {{#with user userId}} {{profile.name}} {{/with}}
+
+        {{#if ready}}
+            <span class="icon icon-checkmark-circle"></span>
+        {{/if}}
+    </li>
+
+</template>

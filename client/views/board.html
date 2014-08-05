@@ -1,0 +1,45 @@
+<template name="board">
+
+    <p class="text--ellipsis">{{user.profile.name}}</p>
+
+    {{#unless finished}}
+
+        <ul class="board" {{attributes}}>
+
+            {{#each cells}}
+                {{> boardCell}}
+            {{/each}}
+
+        </ul>
+
+        {{> progress value=progression }}
+
+    {{else}}
+
+        <h1>Finished</h1>
+
+        <span class="icon-stopwatch"></span>
+
+        <p class="text--light">{{duration}}</p>
+
+    {{/unless}}
+
+</template>
+
+<template name="boardCell">
+
+    <li class="board-cell {{class}}" data-id="{{id}}" data-row="{{row}}" data-column="{{column}}">{{value}}</li>
+
+</template>
+
+<template name="userBoard">
+
+    {{> board}}
+
+    {{#unless finished}}
+        {{#if progress}}
+            <a href="#" class="button" data-action="reset">Clear</a>
+        {{/if}}
+    {{/unless}}
+
+</template>

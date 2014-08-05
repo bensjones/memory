@@ -1,0 +1,16 @@
+@import '/client/less/import';
+
+.progress {
+  height: 4px;
+  border-radius: 10px;
+  background: white;
+  margin: 0 auto;
+
+  &-container {
+    width: @size-grid + 4;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .transition(width 100ms);
+}

@@ -1,0 +1,15 @@
+<template name="layout">
+
+    {{#unless currentUser}}
+
+        {{> login }}
+
+    {{/unless}}
+
+    <div class="layout animation-fade-in">
+
+        {{> yield }}
+
+    </div>
+
+</template>

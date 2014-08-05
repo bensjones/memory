@@ -1,0 +1,31 @@
+@import '/client/less/import';
+
+.players-list {
+  border: 2px solid @color-blue-lighter;
+  border-radius: 1px;
+  position: relative;
+  width: 300px;
+  margin: auto;
+
+  &-item {
+    display: inline-block;
+    height: 42px;
+    line-height: 42px;
+    width: 100%;
+    position: relative;
+
+    &--ready:after {
+      content: '\e608';
+    }
+
+    .icon {
+      position: absolute;
+      right: 9px;
+      top: 9px;
+    }
+  }
+
+  &-item + &-item {
+    border-top: 2px solid @color-blue-lighter;
+  }
+}

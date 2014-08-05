@@ -1,0 +1,9 @@
+@import '/client/less/import';
+
+.keyframes(~'shake,   10%{ transform: translateX(5px); } 30% { transform: translateX(-5px); } 40% { transform: translateX(3px); } 60% { transform: translateX(-3px); } 70% { transform: translateX(1px); } 80% { transform: translateX(-1px); } 100%{ transform: translateX(0px); }');
+.keyframes(~'appear,   0%{ opacity: 0; transform: scale(0.5, 0.5); } 50% { transform: scale(1.05, 1.05); } 80% { transform: scale(0.98, 0.98); } 100%{ opacity: 1; transform: scale(1, 1); }');
+.keyframes(~'fade-in,  0%{ opacity: 0; } 100%{ opacity: 1; }');
+
+.animation-shake   { .animation(shake 300ms); }
+.animation-appear  { .animation(appear 200ms); }
+.animation-fade-in { .animation(fade-in 300ms); }

@@ -1,0 +1,101 @@
+@import '/client/less/import';
+
+html, body { padding: 0; margin: 0; height: 100%; min-height: 100%; }
+
+html {
+  letter-spacing: 0.08em;
+}
+
+body {
+  background: @color-blue;
+  color: #FFF;
+  font-family: 'Open Sans', 'Montserrat', 'Helvetica Neue', sans-serif;
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.85em 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  font-family: Montserrat;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.3em;
+  color: @color-blue-light;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: @color-blue-light;
+
+  .transition(color 100ms);
+
+  &:hover {
+    color: #FFF;
+  }
+}
+
+.button {
+  border: 2px solid @color-blue-light;
+  padding: 0 24px;
+  border-radius: 40px;
+  font-size: 0.8em;
+  font-weight: bold;
+  height: 36px;
+  line-height: 36px;
+  display: inline-block;
+  margin: 24px 0;
+  text-transform: uppercase;
+
+  .transition(all 100ms);
+
+  &:hover {
+    background: #FFF;
+    border-color: #FFF;
+    color: @color-blue;
+  }
+}
+
+.textbox {
+  background: @color-blue-dark;
+  border: 0;
+  padding: 0.5em;
+  color: #FFF;
+  font-size: 1.1em;
+  border-radius: 2px;
+}
+
+.center {
+  text-align: center;
+}
+
+.text {
+  &--small-caps {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: @color-blue-light;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+
+  &--light {
+    color: @color-blue-light;
+  }
+
+  &--ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

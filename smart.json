@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "iron-router": {},
+    "moment": {},
+    "fast-render": {},
+    "publish-with-relations": {}
+  }
+}

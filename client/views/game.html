@@ -1,0 +1,55 @@
+<template name="game">
+
+    {{#if equal game.status 'playing'}}
+
+        {{#with game}}
+
+            {{#each players}}
+
+                <div class="layout-panel">
+
+                    {{#if equal userId currentUser._id}}
+                        {{> userBoard}}
+                    {{else}}
+                        {{>board}}
+                    {{/if}}
+
+                </div>
+
+            {{/each}}
+
+        {{/with}}
+
+    {{else}}
+
+        <div class="layout-box">
+
+            {{#with game}}
+
+                {{#if showLink}}
+                    <p class="text--small-caps">Share the link below with someone</p>
+                    <input type="text" value="{{url}}" readonly="readonly" name="url" class="textbox center" size="40" />
+                    <br />
+                    <br />
+                {{/if}}
+
+                {{#with players}}
+                    {{> playersList}}
+                {{/with}}
+
+                {{#if allowedToJoin}}
+                    <a href="#" class="button" data-action="join">Join</a>
+                {{/if}}
+
+                {{#if equal status 'ready'}}
+                    <a href="#" class="button" data-action="ready">Ready</a>
+                    <p class="text--small-caps">the game will start once everyone is ready</p>
+                {{/if}}
+
+            {{/with}}
+
+        </div>
+
+    {{/if}}
+
+</template>
