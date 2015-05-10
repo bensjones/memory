@@ -5,14 +5,14 @@
 
 @import "client/scss/variables.scss";
 
-@import "client/main.scss";
 @import "client/scss/icons.scss";
 @import "client/scss/reset.scss";
 @import "client/scss/animations.scss";
-@import "client/views/board.scss";
-@import "client/views/game.scss";
-@import "client/views/login.scss";
-@import "client/views/players-list.scss";
-@import "client/views/progress.scss";
-@import "client/views/app.scss";
-@import "client/views/lightbox.scss";
+@import "client/templates/app.scss";
+@import "client/templates/board.scss";
+@import "client/templates/game.scss";
+@import "client/templates/lightbox.scss";
+@import "client/templates/login.scss";
+@import "client/templates/players-list.scss";
+@import "client/templates/progress.scss";
+@import "client/main.scss";

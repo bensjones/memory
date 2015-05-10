@@ -1,9 +1,12 @@
 <template name="app">
 
+	{{> lightbox}}
+
 	<div class="app">
 
 		<div class="app-header">
-
+			<a href="{{pathFor 'home'}}">Home</a>
+			<a href="#" data-action="create-game">Create</a>
 		</div>
 		
 		<div class="app-main">
