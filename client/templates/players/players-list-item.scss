@@ -1,0 +1,11 @@
+.players-list-item {
+  display: inline-block;
+  height: 42px;
+  line-height: 42px;
+  width: 100%;
+  position: relative;
+
+  &-item + &-item {
+    border-top: 2px solid $color-main-lighter;
+  }
+}

@@ -7,6 +7,7 @@ Meteor.methods({
         if (!user) throw new Meteor.Error(401, "You need to login to create a game");
 
         var game = {
+            _id         : Random.id(4),
             status      : 'registration',
             createdAt   : new Date().getTime(),
             createdBy   : user._id
@@ -27,10 +28,6 @@ Meteor.methods({
         if (!game) throw new Meteor.Error(404, "Game not found");
 
         var playerId = Meteor.call('player', gameId);
-
-        if(Players.find({gameId: gameId}).count() === config.maxPlayers) {
-            Games.update({_id: gameId}, { $set : { status : 'ready' }});
-        }
 
         return playerId;
     },

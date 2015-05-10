@@ -7,6 +7,10 @@
 		<div class="app-header">
 			<a href="{{pathFor 'home'}}">Home</a>
 			<a href="#" data-action="create-game">Create</a>
+
+			{{#if currentUser}}
+				{{currentUser.profile.name}}
+			{{/if}}
 		</div>
 		
 		<div class="app-main">
