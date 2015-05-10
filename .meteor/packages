@@ -10,3 +10,5 @@ underscore
 iron:router
 mrt:moment
 fourseven:scss
+cottz:publish-relations
+mrt:publish-with-relations
