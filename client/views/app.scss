@@ -1,0 +1,30 @@
+.app {
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.app-header {
+	height: 60px;
+}
+
+.app-main {
+	flex: 1 1 auto;
+	display: flex;
+	align-content: stretch;
+}
+
+.app-section {
+	flex: 1 1 auto;
+	flex-direction: column;
+	height: 100%;
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+
+	& + & {
+		flex: 0 0 auto;
+		box-shadow: inset 1px 0 0 0 $color-main-dark;
+	}
+}
