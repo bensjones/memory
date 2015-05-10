@@ -1,7 +1,5 @@
-@import '/client/less/import';
-
 .players-list {
-  border: 2px solid @color-blue-lighter;
+  border: 2px solid $color-main-lighter;
   border-radius: 1px;
   position: relative;
   width: 300px;
@@ -26,6 +24,6 @@
   }
 
   &-item + &-item {
-    border-top: 2px solid @color-blue-lighter;
+    border-top: 2px solid $color-main-lighter;
   }
 }

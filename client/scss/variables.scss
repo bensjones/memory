@@ -1,0 +1,9 @@
+$color-main         : #2883de;
+$color-main-light   : lighten($color-main, 75%);
+$color-main-lighter : #3892e7;
+$color-main-dark    : darken($color-main, 4%);
+$color-main-darker  : darken($color-main, 7%);
+$color-border		: $color-main-dark;
+
+$size-grid          : 288px;
+$size-grid-cell		: $size-grid / 9;

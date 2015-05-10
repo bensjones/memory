@@ -1,35 +1,32 @@
-@import '/client/less/import';
-
 .board {
-  width: @size-grid;
-  height: @size-grid;
-  border: 2px solid @color-blue-darker;
+  width: $size-grid;
+  height: $size-grid;
+  border: 2px solid $color-main-darker;
   display: inline-block;
   margin-bottom: 15px;
 
   &-cell {
-    border: 1px solid @color-blue-darker;
+    border: 1px solid $color-main-darker;
     box-sizing: border-box;
     border-left: 0;
     border-top: 0;
-    width: @size-grid-cell;
-    height: @size-grid-cell;
-    line-height: @size-grid-cell;
+    width: $size-grid-cell;
+    height: $size-grid-cell;
+    line-height: $size-grid-cell;
     display: inline-block;
     float: left;
     cursor: pointer;
     text-align: center;
-
-    .user-select(none);
+    user-select: none;
 
     &--active {
       border-radius: 1px;
-      .box-shadow(inset 0 0 0 2px orange);
+      box-shadow: inset 0 0 0 2px orange;
     }
 
     &--disabled {
-      background: @color-blue-dark;
-      color: fade(#FFF, 30%);
+      background: $color-main-dark;
+      color: rgba(#FFF, .3);
 
       &:hover {
         cursor: default;
@@ -38,7 +35,7 @@
 
     &[data-column='3'], &[data-column='6'] {
       border-right-width: 2px;
-      border-right-color: @color-blue-darker;
+      border-right-color: $color-main-darker;
     }
 
     &[data-column='9'] {
@@ -47,7 +44,7 @@
 
     &[data-row='3'], &[data-row='6'] {
       border-bottom-width: 2px;
-      border-bottom-color: @color-blue-darker;
+      border-bottom-color: $color-main-darker;
     }
 
     &[data-row='9'] {

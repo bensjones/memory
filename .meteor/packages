@@ -7,6 +7,6 @@ standard-app-packages
 accounts-base
 accounts-password
 underscore
-less
 iron:router
 mrt:moment
+fourseven:scss
