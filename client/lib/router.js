@@ -7,7 +7,10 @@ Router.map(function() {
     this.route('game', {
         path: '/:_id',
         waitOn: function() { return Meteor.subscribe('game', this.params._id) },
-        onBeforeAction: function(){ Session.set('game', this.params._id); },
+        onBeforeAction: function(){ 
+            Session.set('game', this.params._id); 
+            this.next();
+        },
         data: function(){
             return {
                 game : Games.findOne({_id : this.params._id}),
