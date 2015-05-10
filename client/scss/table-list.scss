@@ -1,0 +1,22 @@
+.table-list {
+	display: table;
+	width: 400px;
+	border: 1px solid $color-border;
+}
+
+.table-list-row {
+	display: table-row;
+
+	& + & {
+		.table-list-cell {
+			border-top: 1px solid $color-border;
+		}
+	}
+}
+
+.table-list-cell {
+	display: table-cell;
+	vertical-align: middle;
+	box-sizing: border-box;
+	padding: 1em;
+}
