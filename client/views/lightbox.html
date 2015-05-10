@@ -1,0 +1,12 @@
+<template name="lightbox">
+	{{#if visible}}
+		<div class="lightbox">
+
+			<button data-action="lightbox-close">close</button>
+
+			<div class="lightbox-inner">
+				{{> UI.dynamic template=template}}
+			</div>
+		</div>
+	{{/if}}
+</template>
