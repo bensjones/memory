@@ -27,10 +27,7 @@
             {{#with game}}
 
                 {{#if showLink}}
-                    <p class="text--small-caps">Share the link below with someone</p>
-                    <input type="text" value="{{url}}" readonly="readonly" name="url" class="textbox center" size="40" />
-                    <br />
-                    <br />
+                    <input type="text" value="{{urlFor 'game'}}" readonly="readonly" name="url" size="40" />
                 {{/if}}
 
                 {{#with players}}
@@ -38,12 +35,12 @@
                 {{/with}}
 
                 {{#if allowedToJoin}}
-                    <a href="#" class="button" data-action="join">Join</a>
+                    <a href="#" data-action="join">Join</a>
                 {{/if}}
 
                 {{#if equal status 'ready'}}
-                    <a href="#" class="button" data-action="ready">Ready</a>
-                    <p class="text--small-caps">the game will start once everyone is ready</p>
+                    <a href="#" data-action="ready">Ready</a>
+                    <p>the game will start once everyone is ready</p>
                 {{/if}}
 
             {{/with}}

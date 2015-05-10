@@ -1,6 +1,6 @@
 <template name="board">
 
-    <p class="text--ellipsis">{{user.profile.name}}</p>
+    <p>{{user.profile.name}}</p>
 
     {{#unless finished}}
 
@@ -18,7 +18,7 @@
 
         <h1>Finished</h1>
 
-        <p class="text--light">{{duration}}</p>
+        <p>{{duration}}</p>
 
     {{/unless}}
 
@@ -36,7 +36,7 @@
 
     {{#unless finished}}
         {{#if progress}}
-            <a href="#" class="button" data-action="reset">Clear</a>
+            <a href="#" data-action="reset">Clear</a>
         {{/if}}
     {{/unless}}
 
