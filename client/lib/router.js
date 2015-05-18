@@ -1,5 +1,9 @@
 Router.configure({
-    layoutTemplate: 'app'
+    layoutTemplate: 'app',
+    loadingTemplate: 'loading',
+    waitOn: function() {
+        return Meteor.subscribe('me');
+    }
 });
 
 Router.map(function() {
