@@ -1,43 +1,25 @@
 <template name="board">
 
-    <p>{{user.profile.name}}</p>
+    <div class="board {{class}}">
+    	
+        {{> grid}}
 
-    {{#unless finished}}
+        <div class="board-footer">
+            {{#if canClear}}
+                <a href="#" data-action="reset">Clear</a>
+            {{/if}}
 
-        <ul class="board" {{attributes}}>
 
-            {{#each cells}}
-                {{> boardCell}}
-            {{/each}}
+            {{#if showName}}
+                <span class="board-player-name">{{name}}</span>
+            {{/if}}
 
-        </ul>
+            {{#if finished}} 
+                <span class="board-player-time">{{timer duration}}</span>
+            {{/if}}
 
-        {{> progress value=progression }}
+        </div>
 
-    {{else}}
-
-        <h1>Finished</h1>
-
-        <p>{{duration}}</p>
-
-    {{/unless}}
-
-</template>
-
-<template name="boardCell">
-
-    <li class="board-cell {{class}}" data-id="{{id}}" data-row="{{row}}" data-column="{{column}}">{{value}}</li>
-
-</template>
-
-<template name="userBoard">
-
-    {{> board}}
-
-    {{#unless finished}}
-        {{#if progress}}
-            <a href="#" data-action="reset">Clear</a>
-        {{/if}}
-    {{/unless}}
+    </div>
 
 </template>

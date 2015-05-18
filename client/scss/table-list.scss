@@ -2,6 +2,7 @@
 	display: table;
 	width: 400px;
 	border: 1px solid $color-border;
+	text-align: left;
 }
 
 .table-list-row {
@@ -18,5 +19,5 @@
 	display: table-cell;
 	vertical-align: middle;
 	box-sizing: border-box;
-	padding: 1em;
+	padding: .75em 1em;
 }

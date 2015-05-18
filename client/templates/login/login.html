@@ -1,7 +1,15 @@
 <template name="login">
 
-    <form name="login">
-        <input type="text" autofocus="autofocus" autocomplete="off" name="name" placeholder="What's your name ?" />
-    </form>
+    <div class="login">
+    	
+    	<p>{{title}}</p>
+
+    	<form name="login">
+
+    	    <input type="text" autofocus="autofocus" autocomplete="off" name="name" size="32" maxlength="24" value="{{value}}" />
+    	
+    	</form>
+    
+    </div>
 
 </template>

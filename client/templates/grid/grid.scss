@@ -1,0 +1,28 @@
+.grid {
+	width: $size-grid;
+	height: $size-grid;
+	position: relative;
+	font-size: 0;
+	padding: 0;
+	margin: 10px 20px;
+	cursor: pointer;
+	border: 2px solid $color-main-darker;
+
+	::selection {
+		background: transparent;
+	}
+}
+
+.grid-inner {
+	display: table;
+	border: 2px solid red;
+}
+
+.grid--small {
+	width: $size-grid-small;
+	height: $size-grid-small;
+}
+
+.grid--disabled {
+	cursor: default;
+}

@@ -5,26 +5,42 @@
 	<div class="app">
 
 		<div class="app-header">
-			<a href="{{pathFor 'home'}}">Home</a>
-			<a href="#" data-action="create-game">Create</a>
 
-			{{#if currentUser}}
-				{{currentUser.profile.name}}
-			{{/if}}
+			<div class="app-header-section">
+				<a href="{{pathFor 'home'}}" class="animation--appear">Home</a>
+			</div>
+
+			<div class="app-header-section">
+				{{> yield region="app-header-center"}}
+			</div>
+
+			<div class="app-header-section">
+				<div class="user">
+					{{#if currentUser}}
+						<span class="user-name">{{currentUser.profile.name}}</span>
+					{{/if}}
+					<a href="#" class="hidden" data-action="edit-name">Edit</a>
+				</div>
+			</div>
+			
 		</div>
 		
 		<div class="app-main">
 
 			<div class="app-section">
 
-				{{> yield}}
+				<div class="app-section-inner">
+					
+					{{> yield}}
+
+				</div>
 				
 			</div>
 
 			<div class="app-section">
 
 				{{> yield region="panel"}}
-				
+
 			</div>
 
 		</div>

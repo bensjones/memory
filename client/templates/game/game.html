@@ -1,51 +1,65 @@
 <template name="game">
 
-    {{#if equal game.status 'playing'}}
+    {{#if isPlaying}}
+        
+        {{#contentFor region="app-header-center"}}
+            {{timer duration}}
+        {{/contentFor}}
 
-        {{#with game}}
+        {{! Current player board }}
 
-            {{#each players}}
+        {{#with loggedPlayer}}
 
-                <div class="layout-panel">
-
-                    {{#if equal userId currentUser._id}}
-                        {{> userBoard}}
-                    {{else}}
-                        {{>board}}
-                    {{/if}}
-
-                </div>
-
-            {{/each}}
+            {{> board}}
 
         {{/with}}
 
+        {{! Opponents boards }}
+
+        {{#contentFor region="panel"}}
+
+            {{#each opponents}}
+
+                {{> board}}
+
+            {{/each}}
+
+        {{/contentFor}}
+        
     {{else}}
 
-        <div class="layout-box">
+        {{! Share URL }}
 
-            {{#with game}}
+        {{#if isHost}}
+            <p>Share the link below with someone</p>
+            <p><input type="text" value="{{urlFor 'game' _id=game._id}}" readonly="readonly" name="url" size="40"></p>
+        {{/if}}
 
-                {{#if showLink}}
-                    <input type="text" value="{{urlFor 'game'}}" readonly="readonly" name="url" size="40" />
-                {{/if}}
+        {{! Players list }}
 
-                {{#with players}}
-                    {{> playersList}}
-                {{/with}}
-
-                {{#if allowedToJoin}}
-                    <a href="#" data-action="join">Join</a>
-                {{/if}}
-
-                {{#if equal status 'ready'}}
-                    <a href="#" data-action="ready">Ready</a>
-                    <p>the game will start once everyone is ready</p>
-                {{/if}}
-
-            {{/with}}
-
+        <div class="table-list">
+            {{#each players}}
+                <div class="table-list-row">
+                    <div class="table-list-cell">{{name}}</div>
+                </div>
+            {{/each}}
         </div>
+
+        <br />
+
+        {{! Buttons }}
+
+        {{#if isHost}}
+            <a href="#" data-action="start" class="button">Start game</a>
+        {{/if}}
+
+        {{#if canLeave}}
+            <a href="#" data-action="leave">Leave</a>
+        {{/if}}
+         
+        {{#if canJoin}}
+            <a href="#" data-action="join" class="button">Join</a>
+        {{/if}}
 
     {{/if}}
 
